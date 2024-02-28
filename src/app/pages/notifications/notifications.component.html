@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Notifications</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <table class="table">
+            <thead class=" text-primary">
+              <tr>
+                <th *ngFor="let header of tableData.headers">{{header}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of tableData.data">
+                <td style="vertical-align: text-top;" *ngFor="let property of row.properties">{{property.key}}{{property.key_data}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

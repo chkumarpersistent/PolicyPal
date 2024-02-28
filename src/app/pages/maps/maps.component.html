@@ -1,0 +1,166 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-12 col-md-12">
+                <div class="numbers">
+                  <p class="card-category" style="text-align: left;">Quote Rate</p>
+                  <p class="card-title" style="font-size:18px; text-align: left;">60%
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-clock-o"></i> In last month
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-12 col-md-12">
+                <div class="numbers">
+                  <p class="card-category" style="text-align: left;">Contract Rate</p>
+                  <p class="card-title" style="font-size:18px; text-align: left;">65%
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-clock-o"></i> In last month
+            </div>
+          </div>
+        </div>
+    
+      </div>
+
+      
+      <div class="col-md-8">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Number Of Policies Pending</h5>
+            <p class="card-category">Monthly performance</p>
+          </div>
+          <div class="card-body ">
+            <canvas id=chartHours width="400" height="100"></canvas>
+          </div>
+<!--           <div class="card-footer ">
+            <hr style="margin-top: 0px;margin-bottom: 13px;">
+            <div class="stats">
+              <i class="fa fa-history"></i> Updated 3 minutes ago
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="col-md-2">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-12 col-md-12">
+                <div class="numbers">
+                  <p class="card-category" style="text-align: left;">Retention Rate</p>
+                  <p class="card-title" style="font-size:18px; text-align: left;">80%
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-clock-o"></i> In last month
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-12 col-md-12">
+                <div class="numbers">
+                  <p class="card-category" style="text-align: left;">New Policy/Agent</p>
+                  <p class="card-title" style="font-size:18px; text-align: left;">65
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-clock-o"></i> In last month
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+
+
+
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Review & Underwriting</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <tr>
+                <th *ngFor="let header of tableData.headers">{{ header }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of tableData.data">
+                <td>{{ row.age }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.occupation }}</td>
+                <td>{{ row.medicalHistory }}</td>
+                <td style="text-align: center;">
+                  <span *ngIf="row.riskMeter === 'low'">
+                    <img
+                      height="50px"
+                      width="50px"
+                      src="assets/img/low.jpg"
+                      alt="Low risk"
+                  /></span>
+                  <span *ngIf="row.riskMeter === 'high'">
+                    <img
+                      height="50px"
+                      width="50px"
+                      src="assets/img/high.jpg"
+                      alt="High risk"
+                  /></span>
+                  <span *ngIf="row.riskMeter === 'medium'">
+                    <img
+                      height="50px"
+                      width="50px"
+                      src="assets/img/medium.jpg"
+                      alt="Medium risk"
+                  /></span>
+                </td>
+                <td>{{ row.rateMeter }} &nbsp;<input type="range" min="1000" max="10000"  value="{{ row.rateMeter }}" /></td>
+                <td><button type="button" class="btn btn-success btn-sm">Approve</button>&nbsp;
+                  <button type="button" class="btn btn-danger btn-sm">Reject</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
